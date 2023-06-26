@@ -1,3 +1,8 @@
+c232hm.name=C232HM
+c232hm.protocol=c232hm
+c232hm.program.tool=avrdude
+c232hm.program.extra_params=
+
 usbasp.name=USBasp
 usbasp.communication=usb
 usbasp.protocol=usbasp
