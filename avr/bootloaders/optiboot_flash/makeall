@@ -279,7 +279,7 @@ declare -a clock_and_baud=(
 )
 
 # Set this variable to true if you want the script to abort if compilation fails
-abort_on_fail=false
+abort_on_fail=true
 
 # Clear terminal window
 clear
@@ -395,6 +395,7 @@ do
       echo -e " make ${mcu_and_params[$i]} AVR_FREQ=${clock_and_baud[$j]} BAUD_RATE=${clock_and_baud[$j+1]} ${mcu_and_params[$i+1]} \x1B[0m"
 
       # Build hex and pipe output to stdout and temp.txt
+      rm -f optiboot_flash.o
       make -s ${mcu_and_params[$i]} AVR_FREQ=${clock_and_baud[$j]} BAUD_RATE=${clock_and_baud[$j+1]} ${mcu_and_params[$i+1]} | tee /dev/tty | tee temp.txt | \
 
       # Fill build info file
